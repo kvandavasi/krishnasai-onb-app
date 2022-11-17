@@ -61,6 +61,8 @@ public class Main {
   public static void main(String[] args) throws Exception {
             System.out.println("Hi");
             // delay 5 seconds
+    String path1 = System.getenv("HEROKU_PRIVATE_IP");
+System.out.println(path1); 
             System.out.println("Bye");    
     SpringApplication.run(Main.class, args);
   }
