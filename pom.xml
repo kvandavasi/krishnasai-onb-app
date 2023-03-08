@@ -95,9 +95,14 @@
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
           <archive>
-            <manifestEntries>
-              <Automatic-Module-Name>com.google.ortools</Automatic-Module-Name>
-            </manifestEntries>
+              <manifest>
+                <addBuildEnvironmentEntries>false</addBuildEnvironmentEntries>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+              </manifest>
+              <manifestEntries>
+                <Automatic-Module-Name>${module.name}</Automatic-Module-Name>
+                </manifestEntries>
           </archive>
         </configuration>
       </plugin>
