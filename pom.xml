@@ -101,7 +101,7 @@
                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
               </manifest>
               <manifestEntries>
-                <Automatic-Module-Name>com.google.ortools</Automatic-Module-Name>
+                <Automatic-Module-Name>ortools.linux.x86.64</Automatic-Module-Name>
                 </manifestEntries>
           </archive>
         </configuration>
