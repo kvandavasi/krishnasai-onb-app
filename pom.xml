@@ -60,11 +60,13 @@
       <groupId>org.webjars</groupId>
       <artifactId>jquery</artifactId>
       <version>${webjars-jquery.version}</version>
+      </dependency>
 <dependency>
     <groupId>com.google.ortools</groupId>
     <artifactId>ortools-java</artifactId>
     <version>9.4.1874</version>
 </dependency>
+      <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>jquery-ui</artifactId>
       <version>${webjars-jquery-ui.version}</version>
