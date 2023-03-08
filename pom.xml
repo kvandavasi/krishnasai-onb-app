@@ -90,6 +90,18 @@
 
   <build>
     <plugins>
+            <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Automatic-Module-Name>com.google.ortools</Automatic-Module-Name>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -105,11 +117,6 @@
                 <java.source>${maven.compiler.source}</java.source>
                 <java.target>${maven.compiler.target}</java.target>
               </additionalProperties>
-                        <archive>
-            <manifestEntries>
-              <Automatic-Module-Name>com.google.ortools</Automatic-Module-Name>
-            </manifestEntries>
-          </archive>
             </configuration>
           </execution>
         </executions>
