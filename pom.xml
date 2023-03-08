@@ -16,7 +16,7 @@
   <name>java-getting-started</name>
 
   <properties>
-    <java.version>13</java.version>
+    <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <webjars-bootstrap.version>4.1.3</webjars-bootstrap.version>
@@ -90,22 +90,6 @@
 
   <build>
     <plugins>
-            <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-              <manifest>
-                <addBuildEnvironmentEntries>false</addBuildEnvironmentEntries>
-                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-              </manifest>
-              <manifestEntries>
-                <Automatic-Module-Name>ortools.linux.x86.64</Automatic-Module-Name>
-                </manifestEntries>
-          </archive>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
