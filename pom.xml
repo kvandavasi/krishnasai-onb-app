@@ -61,6 +61,11 @@
       <artifactId>jquery</artifactId>
       <version>${webjars-jquery.version}</version>
     </dependency>
+    		<dependency>
+    		<groupId>com.google.ortools</groupId>
+    		<artifactId>ortools-java</artifactId>
+    		<version>9.5.2237</version>
+		</dependency>
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>jquery-ui</artifactId>
