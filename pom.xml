@@ -105,6 +105,11 @@
                 <java.source>${maven.compiler.source}</java.source>
                 <java.target>${maven.compiler.target}</java.target>
               </additionalProperties>
+                        <archive>
+            <manifestEntries>
+              <Automatic-Module-Name>com.google.ortools</Automatic-Module-Name>
+            </manifestEntries>
+          </archive>
             </configuration>
           </execution>
         </executions>
