@@ -61,11 +61,6 @@
       <artifactId>jquery</artifactId>
       <version>${webjars-jquery.version}</version>
       </dependency>
-<dependency>
-    <groupId>com.google.ortools</groupId>
-    <artifactId>ortools-java</artifactId>
-    <version>9.4.1874</version>
-</dependency>
       <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>jquery-ui</artifactId>
@@ -90,18 +85,6 @@
 
   <build>
     <plugins>
-      <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-jar-plugin</artifactId>
-  <configuration>
-    <archive>
-      <manifestEntries>
-        <Automatic-Module-Name>ortools-java</Automatic-Module-Name>
-      </manifestEntries>
-    </archive>
-  </configuration>
-</plugin>
-      <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <executions>
