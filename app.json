@@ -9,7 +9,7 @@
     }
   },
   "scripts": {
-    "pr-predestroy": "echo 'Running predestroy script...'"
+    "pr-predestroy": "echo 'Running predestroy script..,mbgvgcfc.'"
   },
   "environments": {
     "test": {
