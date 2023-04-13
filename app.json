@@ -9,6 +9,7 @@
     }
   },
   "scripts": {
+    "pr-predestroy": "echo 'Running predestroy script...'"
   },
   "environments": {
     "test": {
