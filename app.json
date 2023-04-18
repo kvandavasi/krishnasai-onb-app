@@ -9,6 +9,8 @@
     }
   },
   "scripts": {
+      "postdeploy": "echo 'Running postdeploy script'",
+      "pr-predestroy": "echo 'Running predestroy script'"
   },
   "environments": {
     "test": {
