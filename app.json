@@ -8,6 +8,9 @@
       "size": "standard-1x"
     }
   },
+    "buildpacks": [
+    {"url": "https://github.com/heroku/heroku-buildpack-ci-redis.git"}
+  ],
   "scripts": {
     "pr-predestroy": "echo 'Running predestroy script...'"
   },
@@ -15,8 +18,8 @@
     "test": {
       "formation": {
           "test": {
-            "quantity": 1,
-            "size": "standard-1x"
+      "env": { "REDIS_VERSION": "7.0" },
+      "addons": ["heroku-redis:in-dyno"]
           }
       }
    }
