@@ -1,7 +1,6 @@
 {
   "name": "Start on Heroku: Java",
   "description": "A barebones Java app, which can easily be deployed to Heroku.",
-  "addons": [ "heroku-postgresql" ],
   "formation": {
     "web": {
       "quantity": 1,
@@ -9,7 +8,6 @@
     }
   },
   "scripts": {
-    "pr-predestroy": "echo 'Running predestroy script...'"
   },
   "environments": {
     "test": {
@@ -19,9 +17,6 @@
             "size": "standard-1x"
           }
       }
-      "env": { "REDIS_VERSION": "7.0" },
-      "addons": ["heroku-redis:in-dyno"]
-      
    }
 }
 }
