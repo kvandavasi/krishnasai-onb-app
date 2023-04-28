@@ -9,8 +9,9 @@
     }
   },
     "buildpacks": [
-    {"url": "https://github.com/heroku/heroku-buildpack-ci-redis.git"},
-      {"url": "https://github.com/heroku/heroku-buildpack-ci-postgresql.git"}
+
+      {"url": "https://github.com/heroku/heroku-buildpack-ci-postgresql.git"},
+          {"url": "https://github.com/heroku/heroku-buildpack-ci-redis.git"}
   ],
   "scripts": {
     "pr-predestroy": "echo 'Running predestroy script...'"
