@@ -20,8 +20,8 @@
     "test": {
       "formation": {
           "test": {
-      "env": { "REDIS_VERSION": "7.0" },
-      "addons": ["heroku-redis:in-dyno"]
+             "env": { "REDIS_VERSION": "7.0" },
+              "addons": ["heroku-redis:in-dyno"]
           }
       }
    }
