@@ -1,25 +1,31 @@
 {
-  "name": "Start on Heroku: Java",
-  "description": "A barebones Java app, which can easily be deployed to Heroku.",
-  "addons": [ "heroku-postgresql" ],
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "standard-1x"
-    }
-  },
-    "buildpacks": [
+	"name": "Start on Heroku: Java",
+	"description": "A barebones Java app, which can easily be deployed to Heroku.",
+	"addons": ["heroku-postgresql"],
+	"formation": {
+		"web": {
+			"quantity": 1,
+			"size": "standard-1x"
+		}
+	},
+	"buildpacks": [
 
-      {"url": "https://github.com/heroku/heroku-buildpack-ci-postgresql.git"},
-          {"url": "https://github.com/heroku/heroku-buildpack-ci-redis.git"}
-  ],
-  "scripts": {
-    "pr-predestroy": "echo 'Running predestroy script...'"
-  },
-  "environments": {
-          "test": {
-             "env": { "REDIS_VERSION": "7.0" },
-              "addons": ["heroku-redis:in-dyno"]
-          }
-}
+		{
+			"url": "https://github.com/heroku/heroku-buildpack-ci-postgresql.git"
+		},
+		{
+			"url": "https://github.com/heroku/heroku-buildpack-ci-redis.git"
+		}
+	],
+	"scripts": {
+		"pr-predestroy": "echo 'Running predestroy script...'"
+	},
+	"environments": {
+		"test": {
+			"env": {
+				"REDIS_VERSION": "7.0"
+			},
+			"addons": ["heroku-redis:in-dyno"]
+		}
+	}
 }
