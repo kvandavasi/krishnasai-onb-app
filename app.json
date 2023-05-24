@@ -7,6 +7,11 @@
       "size": "standard-1x"
     }
   },
+"addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ],
   "scripts": {
   },
   "environments": {
