@@ -4,8 +4,8 @@ app_name="krishnasai-onb-app-2"
 echo $app_name
 
 # Get the latest release from Heroku
-latest_release=$(heroku releases -a "$app_name" | awk 'NR==4 {print $2}')
-release_date=$(heroku releases -a "$app_name" | awk 'NR==4 {print $1}' | xargs -I{} heroku releases:info -a "$app_name" {} --json | grep -oP '(?<="created_at": ")[^"]+')
+latest_release=$(heroku releases -a "$app_name" | awk '{print $2}')
+release_date=$(heroku releases -a "$app_name" | awk '{print $1}' | xargs -I{} heroku releases:info -a "$app_name" {} --json | grep -oP '(?<="created_at": ")[^"]+')
 
 echo $latest_release
 echo $release_date
