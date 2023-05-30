@@ -2,8 +2,8 @@ chmod 777 script.sh
 app_name="krishnasai-onb-app-2"
 
 # Get the latest release from Heroku
-latest_release=$(heroku releases -a "$app_name" | awk 'NR==4 {print $2}')
-release_date=$(heroku releases -a "$app_name" | awk 'NR==4 {print $1}' | xargs -I{} heroku releases:info -a "$app_name" {} --json | grep -oP '(?<="created_at": ")[^"]+')
+latest_release=$(heroku releases -a "$app_name" | awk 'NR==2 {print $2}')
+release_date=$(heroku releases -a "$app_name" | awk 'NR==2 {print $1}' | xargs -I{} heroku releases:info -a "$app_name" {} --json | grep -oP '(?<="created_at": ")[^"]+')
 
 echo $latest_release
 echo $release_date
