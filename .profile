@@ -24,6 +24,6 @@ time_diff=$((current_timestamp - release_timestamp))
 echo $time_diff
 
 # Check if the release contains the keyword "deploy" and if it's within the last 5 minutes
-if [[ $latest_release == "Deploy" && $time_diff -le 500 ]]; then
+if [[ $latest_release == "Deploy" && $time_diff -le 30 ]]; then
     echo "Hello! This is because of This"
 fi
