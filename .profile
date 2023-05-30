@@ -1,4 +1,5 @@
 chmod 777 script.sh
+apt install jq -y
 
 app_name="krishnasai-onb-app-2"
 
