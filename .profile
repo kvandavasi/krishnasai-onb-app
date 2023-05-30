@@ -5,6 +5,7 @@ app_name="krishnasai-onb-app-2"
 latest_release=$(heroku releases -a "$app_name" | awk 'NR==4 {print $2}')
 release_date=$(heroku releases -a "$app_name" | awk 'NR==4 {print $1}' | xargs -I{} heroku releases:info -a "$app_name" {} --json | grep -oP '(?<="created_at": ")[^"]+')
 
+
 # Convert release date string to timestamp
 release_timestamp=$(date -u -d "$release_date" +"%s")
 
@@ -15,6 +16,6 @@ current_timestamp=$(date -u +"%s")
 time_diff=$((current_timestamp - release_timestamp))
 
 # Check if the release contains the keyword "deploy" and if it's within the last 5 minutes
-if [[ $latest_release == "Deploy" && $time_diff -le 100 ]]; then
-    echo "Hello! Because this is deploy"
+if [[ $latest_release == "Deploy" && $time_diff -le 300 ]]; then
+    echo "Hello!"
 fi
