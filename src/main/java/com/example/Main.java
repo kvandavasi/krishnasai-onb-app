@@ -62,19 +62,27 @@ public class Main {
   @Autowired
  private DataSource dataSource;
 
-String redisUrl = System.getenv("REDIS_URL");
+
+
+  public static void main(String[] args) throws Exception {
+            System.out.println("Hi");
+            // delay 5 seconds
+    String path1 = System.getenv("HEROKU_PRIVATE_IP");
+System.out.println(path1); 
+            System.out.println("Bye");   
+        String redisUrl = System.getenv("REDIS_URL");
         if (redisUrl == null) {
             System.out.println("REDIS_URL environment variable is not set.");
             return;
         }
-        
+
         RedisClient redisClient = RedisClient.create(redisUrl);
         StatefulRedisConnection<String, String> connection = null;
-        
+
         try {
             connection = redisClient.connect();
             RedisCommands<String, String> commands = connection.sync();
-            
+
             String pingResponse = commands.ping();
             if ("PONG".equals(pingResponse)) {
                 System.out.println("Redis connection is active.");
@@ -88,14 +96,7 @@ String redisUrl = System.getenv("REDIS_URL");
                 connection.close();
             }
             redisClient.shutdown();
-        }
-
-  public static void main(String[] args) throws Exception {
-            System.out.println("Hi");
-            // delay 5 seconds
-    String path1 = System.getenv("HEROKU_PRIVATE_IP");
-System.out.println(path1); 
-            System.out.println("Bye");    
+        } 
     SpringApplication.run(Main.class, args);
   }
 
