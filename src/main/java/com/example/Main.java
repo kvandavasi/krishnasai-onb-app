@@ -33,6 +33,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import java.util.concurrent.TimeUnit;
 import org.springframework.web.bind.annotation.*;
+import io.lettuce.core.RedisClient;
+import io.lettuce.core.RedisConnectionException;
+import io.lettuce.core.api.StatefulRedisConnection;
+import io.lettuce.core.api.sync.RedisCommands;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -58,12 +62,41 @@ public class Main {
   @Autowired
  private DataSource dataSource;
 
+
+
   public static void main(String[] args) throws Exception {
             System.out.println("Hi");
             // delay 5 seconds
     String path1 = System.getenv("HEROKU_PRIVATE_IP");
 System.out.println(path1); 
-            System.out.println("Bye");    
+            System.out.println("Bye");   
+        String redisUrl = System.getenv("REDIS_URL");
+        if (redisUrl == null) {
+            System.out.println("REDIS_URL environment variable is not set.");
+            return;
+        }
+
+        RedisClient redisClient = RedisClient.create(redisUrl);
+        StatefulRedisConnection<String, String> connection = null;
+
+        try {
+            connection = redisClient.connect();
+            RedisCommands<String, String> commands = connection.sync();
+
+            String pingResponse = commands.ping();
+            if ("PONG".equals(pingResponse)) {
+                System.out.println("Redis connection is active.");
+            } else {
+                System.out.println("Redis connection is not active.");
+            }
+        } catch (RedisConnectionException e) {
+            System.out.println("Unable to connect to Redis.");
+        } finally {
+            if (connection != null) {
+                connection.close();
+            }
+            redisClient.shutdown();
+        } 
     SpringApplication.run(Main.class, args);
   }
 
