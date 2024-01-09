@@ -8,6 +8,7 @@
     }
   },
   "scripts": {
+"postdeploy": "bash .postdeploy.sh"
   },
   "environments": {
     "test": {
@@ -19,4 +20,5 @@
       }
    }
 }
+
 }
